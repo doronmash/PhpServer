@@ -63,7 +63,7 @@ function pwdmatch($pwd, $pwdRepeat){
 
 function uidExists($conn, $Username, $email){
   $sql = "SELECT * FROM users WHERE userUid = ? OR userEmail = ?;";
-  
+
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
     header("location: ../signup.php?error=usernametaken18");
@@ -269,7 +269,7 @@ function saveSession($conn, $userId, $sessionId){
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
    //echo "dsfsd77777777777777777777777777f";
-  
+
 
 }
 
