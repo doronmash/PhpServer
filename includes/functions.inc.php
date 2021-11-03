@@ -66,7 +66,7 @@ function uidExists($conn, $Username, $email){
   
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("location: ../signup.php?error=usernametaken1");
+    header("location: ../signup.php?error=usernametaken18");
     exit();
   }
 
@@ -250,23 +250,26 @@ function loginUser($conn, $Username, $pwd, $rememberMe){
     $_SESSION["userid"] = $uidExists["userId"];
     $_SESSION["useruid"] = $uidExists["userUid"];
     header("location: ../index.php");
-    // header("location: ../hello.php");
 
     exit();
   }
 }
 
 function saveSession($conn, $userId, $sessionId){
+ // echo "dsfsdf";
   $sql = "INSERT INTO session (userId, sessionId) VALUES (?, ?);";
-  $stmt = $conn->prepare($sql);
-  echo $userId;
-  echo $sessionId;
-
-  $stmt->bind_param("ss", $userId, $sessionId);
-  // $stmt->bind_param("is", $userId, $sessionId);
-
-  $stmt->execute();
-  $stmt->close();
+   //echo $userId;
+  // echo $sessionId;
+   $stmt = mysqli_stmt_init($conn);
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../signup.php?error=usernametaken");
+    exit();
+  }
+  mysqli_stmt_bind_param($stmt, "is", $userId, $sessionId);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+   //echo "dsfsd77777777777777777777777777f";
+  
 
 }
 

@@ -13,8 +13,27 @@
         }
 
         #wrapper {
+          text color: white;
             min-height: 100%;
         }
+        /* button{
+          color: white;
+
+          border-radius: 24px;
+          width: 250%;
+          height: 50%;
+          background-color: #191919;
+          margin: auto;
+          text-align: center;
+          margin: 5px;
+          text-decoration:underline;
+          color: white;
+
+          border-color: #2ecc71
+          text color: white;
+        } */
+
+
     </style>
     <meta charset="utf-8">
     <title>PHP Project 01</title>
@@ -34,9 +53,10 @@
           <?php
             if (isset($_SESSION["useruid"])) {
             //   echo "<li><a href='profile.php'>Profile page</a></li>";
-              echo "<li><a href='includes/logout.inc.php'>Log out</a></li>";
+              echo "<li ><a href='includes/logout.inc.php'>Log out</a></li>";
             }
             else {
+              // echo "<li><a href='getCode.php'>Sign up</a></li>";
               echo "<li><a href='getCode.php'>Sign up</a></li>";
               echo "<li><a href='login.php'>Log in</a></li>";
             }
