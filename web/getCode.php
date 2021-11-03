@@ -1,5 +1,5 @@
 <?php
-  include_once 'web/header.php';
+  include_once 'header.php';
  ?>
 
   <section class="code-form">

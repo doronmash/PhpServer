@@ -37,8 +37,8 @@
     </style>
     <meta charset="utf-8">
     <title>PHP Project 01</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
 
