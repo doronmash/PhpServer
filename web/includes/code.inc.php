@@ -2,6 +2,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+require_once 'functions.inc.php';
+
 logToConsole("Check1");
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/Exception.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/PHPMailer.php';
@@ -16,7 +18,7 @@ logToConsole("Check2");
 // require 'PHPMailer/Exception.php';
 // require 'PHPMailer/PHPMailer.php';
 // require 'PHPMailer/SMTP.php';
-require_once 'functions.inc.php';
+
 logToConsole("Check3");
 require_once 'dbh.inc.php';
 logToConsole("Check4");
