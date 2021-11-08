@@ -109,7 +109,7 @@ function getUserName($conn, $userId){
 
 
 function saveCode($email, $code){
-  $sql = "INSERT INTO code (email, code) VALUES (?, ?);";
+  $sql = "INSERT INTO code (email, code) VALUES ($email, $code);";
   logToConsole("sql: ". $sql);
   // $stmt = mysqli_stmt_init($conn);
   // $stmt = $conn->prepare($sql);
