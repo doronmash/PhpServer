@@ -1,6 +1,6 @@
 <?php
   include_once 'header.php';
-  include_once 'includes/bdh.inc.php'
+  require_once 'includes/dbh.inc.php'
  ?>
 
 
