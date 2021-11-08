@@ -116,11 +116,11 @@ function saveCode($email, $code){
   // $stmt->execute();
   // $stmt->close();
 
-  logToConsole("Prepare sql");
-  $st = $app['pdo']->prepare($sql);
-  logToConsole("-> Execute");
-  $st->execute();
-  logToConsole("<- Execute");
+  // logToConsole("Prepare sql");
+  // $st = $app['pdo']->prepare($sql);
+  // logToConsole("-> Execute");
+  // $st->execute();
+  // logToConsole("<- Execute");
 
   logToConsole("Prepare sql");
   $stmt = $pdo->prepare($sql);
