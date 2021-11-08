@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require_once 'functions.inc.php';
-require_once 'log.inc.php';
+// require_once 'log.inc.php';
 
 logToConsole("Check1");
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/Exception.php';

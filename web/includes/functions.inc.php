@@ -1,7 +1,7 @@
 <?php
 ob_start();
 
-require_once 'log.inc.php';
+// require_once 'log.inc.php';
 
 function emptyInputSignup($name, $email, $Username, $pwd, $pwdRepeat){
   $result;
