@@ -2,6 +2,7 @@
   include_once 'header.php';
   require_once 'functions.inc.php';
 
+  logToConsole("check 1");
   $dbopts = parse_url(getenv('DATABASE_URL'));
   logToConsole($dbopts["user"]);
   logToConsole($dbopts["pass"]);
