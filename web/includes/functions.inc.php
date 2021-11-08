@@ -1,4 +1,5 @@
 <?php
+require_once 'log.inc.php';
 
 ob_start();
 

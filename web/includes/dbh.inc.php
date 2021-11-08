@@ -1,5 +1,4 @@
 <?php
-require_once 'functions.inc.php';
 
 // $serverName = "localhost";
 // $dBUsername = "id17769391_root";
