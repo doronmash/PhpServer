@@ -2,10 +2,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-echo "Check";
+logToConsole("Check1");
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/Exception.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/PHPMailer.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
+logToConsole("Check2");
 // require_once 'functions.inc.php';
 // require_once 'dbh.inc.php';
 
@@ -16,7 +17,9 @@ require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
 // require 'PHPMailer/PHPMailer.php';
 // require 'PHPMailer/SMTP.php';
 require_once 'functions.inc.php';
+logToConsole("Check3");
 require_once 'dbh.inc.php';
+logToConsole("Check4");
 
 $randomNumber = rand(100,999);
 // echo "<h2>" . $randomNumber . "</h2>";
