@@ -14,15 +14,7 @@ $dBName = "id17769391_dorondata";
 
 // $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 
-
-
-logToConsole("check A");
 $dbopts = parse_url(getenv('DATABASE_URL'));
-logToConsole($dbopts["user"]);
-logToConsole($dbopts["pass"]);
-logToConsole($dbopts["host"]);
-logToConsole($dbopts["port"]);
-logToConsole($dbopts["path"]);
 
 $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
                array(

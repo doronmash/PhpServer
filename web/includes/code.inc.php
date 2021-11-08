@@ -27,13 +27,15 @@ $randomNumber = rand(100,999);
 // echo "<h2>" . $randomNumber . "</h2>";
 if (isset($_POST["sendCode"])) {
   $email = $_POST["email"];
+  logToConsole("Check5");
 
   if (invalidUidEmail($email) !== false) {
     header("location: ../getCode.php?error=invalidemail");
     exit();
   }
+  logToConsole("Check6");
 
-  saveCode($conn, $email, "" . $randomNumber);
+  saveCode($email, "" . $randomNumber);
   $mail = new PHPMailer;
 
   $mail->isSMTP();                      // Set mailer to use SMTP
