@@ -1,6 +1,6 @@
 <?php
 
-ob_start();
+// ob_start();
 
 function debugToConsole ( $msg ) {
     $msg = str_replace('"', "''", $msg);  # weak attempt to make sure there's not JS breakage

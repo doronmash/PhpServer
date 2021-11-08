@@ -3,6 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require_once 'functions.inc.php';
+require_once 'log.inc.php';
 
 logToConsole("Check1");
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/Exception.php';
@@ -67,7 +68,7 @@ if (isset($_POST["sendCode"])) {
   // Mail body content
   $bodyContent = '<h1 dir="ltr">Your code is: </h1>';
   $bodyContent .= '<p dir="ltr"><b>' . $randomNumber . '</b></p>';
-$mail->Body    = $bodyContent;
+  $mail->Body    = $bodyContent;
 
 // Send email
 if(!$mail->send()) {
