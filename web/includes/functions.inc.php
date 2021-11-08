@@ -1,7 +1,7 @@
 <?php
 ob_start();
 
-// require_once 'log.inc.php';
+require_once 'log.inc.php';
 
 function emptyInputSignup($name, $email, $Username, $pwd, $pwdRepeat){
   $result;
@@ -398,21 +398,4 @@ function generateRandomString($length = 10) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
-}
-
-function debugToConsole ( $msg ) {
-    $msg = str_replace('"', "''", $msg);  # weak attempt to make sure there's not JS breakage
-    echo "<script>console.debug( \"$msg\" );</script>";
-}
-function errorToConsole ( $msg ) {
-    $msg = str_replace('"', "''", $msg);  # weak attempt to make sure there's not JS breakage
-    echo "<script>console.error( \"$msg\" );</script>";
-}
-function warnToConsole ( $msg ) {
-    $msg = str_replace('"', "''", $msg);  # weak attempt to make sure there's not JS breakage
-    echo "<script>console.warn( \"$msg\" );</script>";
-}
-function logToConsole ( $msg ) {
-    $msg = str_replace('"', "''", $msg);  # weak attempt to make sure there's not JS breakage
-    echo "<script>console.log( \"$msg\" );</script>";
 }
