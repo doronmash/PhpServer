@@ -139,7 +139,7 @@ function saveCode($email, $code){
     //
     // return $app['twig']->render('database.twig', array(
     //   'names' => $names
-    ));
+    // ));
   });
 
   // logToConsole("Prepare sql");
