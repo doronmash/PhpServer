@@ -110,6 +110,7 @@ function getUserName($conn, $userId){
 
 function saveCode($email, $code){
   $sql = "INSERT INTO code (email, code) VALUES (?, ?);";
+  logToConsole("sql: ". $sql);
   // $stmt = mysqli_stmt_init($conn);
   // $stmt = $conn->prepare($sql);
   // $stmt->bind_param("ss", $email, $code);
