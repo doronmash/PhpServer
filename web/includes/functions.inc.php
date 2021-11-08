@@ -122,16 +122,25 @@ function saveCode($email, $code){
   $st->execute();
   logToConsole("<- Execute");
 
+  logToConsole("Prepare sql");
+  $stmt = $pdo->prepare($sql);
+  logToConsole("-> Execute");
+  $stmt->execute();
+  logToConsole("<- Execute");
+  $rowCount = $stmt->rowCount();
+  $details = $stmt->fetch();
+  logToConsole("Details: " . $details);
 
-  $names = array();
-  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['email']);
-    $names[] = $row;
-  }
 
-  return $app['twig']->render('database.twig', array(
-    'names' => $names
-  ));
+  // $names = array();
+  // while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+  //   $app['monolog']->addDebug('Row ' . $row['email']);
+  //   $names[] = $row;
+  // }
+  //
+  // return $app['twig']->render('database.twig', array(
+  //   'names' => $names
+  // ));
 
 
   // if (!mysqli_stmt_prepare($stmt, $sql)) {
