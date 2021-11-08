@@ -3,10 +3,10 @@
   require_once 'includes/dbh.inc.php';
   require_once 'includes/functions.inc.php';
 
-  // if(isset($_COOKIE["userId"]) && isset($_COOKIE["sessionId"])){
-  //   // echo $_COOKIE["userId"] . " " . $_COOKIE["sessionId"];
-  //
-  //   checkSession($conn,$_COOKIE["userId"], $_COOKIE["sessionId"]);
+  if(isset($_COOKIE["userId"]) && isset($_COOKIE["sessionId"])){
+    // echo $_COOKIE["userId"] . " " . $_COOKIE["sessionId"];
+
+    checkSession($conn,$_COOKIE["userId"], $_COOKIE["sessionId"]);
 
  }
  ?>

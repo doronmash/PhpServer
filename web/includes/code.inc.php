@@ -18,7 +18,7 @@ require_once 'functions.inc.php';
 require_once 'dbh.inc.php';
 
 $randomNumber = rand(100,999);
-// echo "<h2>" . $randomNumber . "</h2>";
+echo "<h2>" . $randomNumber . "</h2>";
 if (isset($_POST["sendCode"])) {
   $email = $_POST["email"];
 
@@ -61,7 +61,7 @@ $mail->Body    = $bodyContent;
 
 // Send email
 if(!$mail->send()) {
-    echo 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo;
+  echo 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo;
 } else {
   header("location: ../signup.php");
     // echo 'Message has been sent.';
