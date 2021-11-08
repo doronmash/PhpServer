@@ -118,11 +118,29 @@ function saveCode($email, $code){
   // $stmt->execute();
   // $stmt->close();
 
-  logToConsole("Prepare sql");
-  $st = $app['pdo']->prepare($sql);
-  logToConsole("-> Execute");
-  $st->execute();
-  logToConsole("<- Execute");
+  // logToConsole("Prepare sql");
+  // $st = $app['pdo']->prepare($sql);
+  // logToConsole("-> Execute");
+  // $st->execute();
+  // logToConsole("<- Execute");
+
+  $app->get('/db/', function() use($app) {
+    logToConsole("Prepare sql");
+    $st = $app['pdo']->prepare($sql);
+    logToConsole("-> Execute");
+    $st->execute();
+    logToConsole("<- Execute");
+
+    // $names = array();
+    // while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    //   $app['monolog']->addDebug('Row ' . $row['email']);
+    //   $names[] = $row;
+    // }
+    //
+    // return $app['twig']->render('database.twig', array(
+    //   'names' => $names
+    ));
+  });
 
   // logToConsole("Prepare sql");
   // $stmt = $pdo->prepare($sql);

@@ -35,7 +35,7 @@ $app->get('/db/', function() use($app) {
 
   $names = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['name']);
+    $app['monolog']->addDebug('Row ' . $row['email']);
     $names[] = $row;
   }
 
