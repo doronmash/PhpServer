@@ -2,7 +2,7 @@
 require_once 'log.inc.php';
 
 logToConsole("-> import");
-require('../vendor/autoload.php');
+require_once __DIR__.'/../vendor/autoload.php';
 logToConsole("<- import");
 
 // $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
