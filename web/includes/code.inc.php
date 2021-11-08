@@ -2,6 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+echo "Check";
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/Exception.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/PHPMailer.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
@@ -18,7 +19,7 @@ require_once 'functions.inc.php';
 require_once 'dbh.inc.php';
 
 $randomNumber = rand(100,999);
-echo "<h2>" . $randomNumber . "</h2>";
+// echo "<h2>" . $randomNumber . "</h2>";
 if (isset($_POST["sendCode"])) {
   $email = $_POST["email"];
 
