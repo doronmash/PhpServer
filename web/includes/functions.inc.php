@@ -116,6 +116,20 @@ function saveCode($conn, $email, $code){
   $stmt->execute();
   $stmt->close();
 
+  $st = $app['pdo']->prepare($sql);
+  $st->execute();
+
+  $names = array();
+  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    $app['monolog']->addDebug('Row ' . $row['email']);
+    $names[] = $row;
+  }
+
+  return $app['twig']->render('database.twig', array(
+    'names' => $names
+  ));
+
+
   // if (!mysqli_stmt_prepare($stmt, $sql)) {
   //   header("location: ../signup.php?error=usernametaken");
   //   exit();
