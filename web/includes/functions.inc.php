@@ -118,20 +118,20 @@ function saveCode($email, $code){
   // $stmt->execute();
   // $stmt->close();
 
-  // logToConsole("Prepare sql");
-  // $st = $app['pdo']->prepare($sql);
-  // logToConsole("-> Execute");
-  // $st->execute();
-  // logToConsole("<- Execute");
-
   logToConsole("Prepare sql");
-  $stmt = $pdo->prepare($sql);
+  $st = $app['pdo']->prepare($sql);
   logToConsole("-> Execute");
-  $stmt->execute();
+  $st->execute();
   logToConsole("<- Execute");
-  $rowCount = $stmt->rowCount();
-  $details = $stmt->fetch();
-  logToConsole("Details: " . $details);
+
+  // logToConsole("Prepare sql");
+  // $stmt = $pdo->prepare($sql);
+  // logToConsole("-> Execute");
+  // $stmt->execute();
+  // logToConsole("<- Execute");
+  // $rowCount = $stmt->rowCount();
+  // $details = $stmt->fetch();
+  // logToConsole("Details: " . $details);
 
 
   // $names = array();
