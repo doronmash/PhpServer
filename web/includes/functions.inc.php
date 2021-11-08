@@ -108,16 +108,20 @@ function getUserName($conn, $userId){
 }
 
 
-function saveCode($conn, $email, $code){
+function saveCode($email, $code){
   $sql = "INSERT INTO code (email, code) VALUES (?, ?);";
   // $stmt = mysqli_stmt_init($conn);
-  $stmt = $conn->prepare($sql);
-  $stmt->bind_param("ss", $email, $code);
-  $stmt->execute();
-  $stmt->close();
+  // $stmt = $conn->prepare($sql);
+  // $stmt->bind_param("ss", $email, $code);
+  // $stmt->execute();
+  // $stmt->close();
 
+  logToConsole("Prepare sql");
   $st = $app['pdo']->prepare($sql);
+  logToConsole("-> Execute");
   $st->execute();
+  logToConsole("<- Execute");
+
 
   $names = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
