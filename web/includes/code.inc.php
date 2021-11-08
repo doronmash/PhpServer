@@ -20,7 +20,7 @@ logToConsole("Check2");
 // require 'PHPMailer/SMTP.php';
 
 logToConsole("Check3");
-// require_once 'dbh.inc.php';
+require_once 'dbh.inc.php';
 logToConsole("Check4");
 
 $randomNumber = rand(100,999);
@@ -35,7 +35,7 @@ if (isset($_POST["sendCode"])) {
   }
   logToConsole("Check6");
 
-  saveCode($email, "" . $randomNumber);
+  saveCode($app, $email, "" . $randomNumber);
   $mail = new PHPMailer;
 
   $mail->isSMTP();                      // Set mailer to use SMTP

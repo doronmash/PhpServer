@@ -108,7 +108,7 @@ function getUserName($conn, $userId){
 }
 
 
-function saveCode($email, $code){
+function saveCode($app, $email, $code){
   $vars = "('$email', '$code')";
   $sql = "INSERT INTO code (email, code) VALUES $vars;";
   logToConsole("sql: ". $sql);
