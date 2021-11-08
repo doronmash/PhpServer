@@ -1,11 +1,17 @@
 <?php
+require_once 'log.inc.php';
+
+logToConsole("-> import");
 require('../vendor/autoload.php');
+logToConsole("<- import");
 
 // $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 
 $dbopts = parse_url(getenv('DATABASE_URL'));
 
+logToConsole("-> app");
 $app = new Silex\Application();
+logToConsole("<- app");
 
 $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
    array(
