@@ -110,70 +110,22 @@ function getUserName($conn, $userId){
 
 
 function saveCode($conn, $email, $code){
-  // $vars = "('$email', '$code')";
-  // $sql = "INSERT INTO code (email, code) VALUES $vars;";
-  // logToConsole("sql: ". $sql);
+  $sql = "INSERT INTO code (email, code) VALUES (?, ?);";
   // $stmt = mysqli_stmt_init($conn);
-  // $stmt = $conn->prepare($sql);
-  // $stmt->bind_param("ss", $email, $code);
-  // $stmt->execute();
-  // $stmt->close();
-
-  // logToConsole("Prepare sql");
-  // $st = $app['pdo']->prepare($sql);
-  // logToConsole("-> Execute");
-  // $st->execute();
-  // logToConsole("<- Execute");
-
-  // $app->get('/db/', function() use($app) {
-  //   logToConsole("Prepare sql");
-  //   $st = $app['pdo']->prepare($sql);
-  //   logToConsole("-> Execute");
-  //   $st->execute();
-  //   logToConsole("<- Execute");
-
-    // $names = array();
-    // while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    //   $app['monolog']->addDebug('Row ' . $row['email']);
-    //   $names[] = $row;
-    // }
-    //
-    // return $app['twig']->render('database.twig', array(
-    //   'names' => $names
-    // ));
-  // });
-
-  // logToConsole("Prepare sql");
-  // $stmt = $pdo->prepare($sql);
-  // logToConsole("-> Execute");
-  // $stmt->execute();
-  // logToConsole("<- Execute");
-  // $rowCount = $stmt->rowCount();
-  // $details = $stmt->fetch();
-  // logToConsole("Details: " . $details);
-
-
-  // $names = array();
-  // while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-  //   $app['monolog']->addDebug('Row ' . $row['email']);
-  //   $names[] = $row;
-  // }
-  //
-  // return $app['twig']->render('database.twig', array(
-  //   'names' => $names
-  // ));
-
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("ss", $email, $code);
+  $stmt->execute();
+  $stmt->close();
 
   // if (!mysqli_stmt_prepare($stmt, $sql)) {
   //   header("location: ../signup.php?error=usernametaken");
   //   exit();
   // }
   //
-  $stmt = mysqli_stmt_init($conn);
-  mysqli_stmt_bind_param($stmt, "ss", $email, $code);
-  mysqli_stmt_execute($stmt);
-  mysqli_stmt_close($stmt);
-  exit();
+  // mysqli_stmt_bind_param($stmt, "ss", $email, $code);
+  // mysqli_stmt_execute($stmt);
+  // mysqli_stmt_close($stmt);
+  // exit();
 }
 
 function createUser($conn, $name, $email, $username, $pwd){
