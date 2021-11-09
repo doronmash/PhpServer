@@ -256,6 +256,92 @@ function loginUser($conn, $Username, $pwd, $rememberMe){
   }
 }
 
+// function saveSession($conn, $userId, $sessionId){
+//  // echo "dsfsdf";
+//   $sql = "INSERT INTO session (userId, sessionId) VALUES (?, ?);";
+//    //echo $userId;
+//   // echo $sessionId;
+//    $stmt = mysqli_stmt_init($conn);
+//   if (!mysqli_stmt_prepare($stmt, $sql)) {
+//     header("location: ../signup.php?error=usernametaken");
+//     exit();
+//   }
+//   mysqli_stmt_bind_param($stmt, "is", $userId, $sessionId);
+//   mysqli_stmt_execute($stmt);
+//   mysqli_stmt_close($stmt);
+//    //echo "dsfsd77777777777777777777777777f";
+//
+//
+// }
+//
+// function getSession($resultData){
+//     if ($row = mysqli_fetch_assoc($resultData)) {
+//     return $row;
+//   }
+//   else {
+//     $result = false;
+//     return $result;
+//   }
+// }
+//
+//
+// function checkSession($conn,$userId, $sessionId){
+//   $sql = "SELECT * FROM session WHERE userId = ?;";
+//   $stmt = mysqli_stmt_init($conn);
+//   if (!mysqli_stmt_prepare($stmt, $sql)) {
+//       return;
+//     }
+//
+//   mysqli_stmt_bind_param($stmt, "s", $userId);
+//   mysqli_stmt_execute($stmt);
+//
+//   $resultData = mysqli_stmt_get_result($stmt);
+//   $row = getSession($resultData);
+//   if($row == false){
+//
+//       return;
+//   }
+//   $checkSessionId = password_verify($sessionId, $row["sessionId"]);
+//
+//   if ($checkSessionId === false) {
+//
+//
+//       return;
+//     }
+//   else{
+//     $user = getUserName($conn, $row['userId']);
+//     $_SESSION['userid'] = $user['userId'];
+//     $_SESSION['useruid'] = $user['userUid'];
+//     // $_SESSION['userid'] = $user['usersId'];
+//     // $_SESSION['useruid'] = $user['usersUid'];
+//
+//     header("location: ../index.php");
+//     // header("location: ../hello.php");
+//     ob_end_flush();
+//     exit();
+//   }
+//
+//   mysqli_stmt_close($stmt);
+//
+// }
+//
+// function removeSession($conn,$userId){
+//   $sql = "DELETE FROM session WHERE userId = ?;";
+//   $stmt = mysqli_stmt_init($conn);
+//   if (!mysqli_stmt_prepare($stmt, $sql)) {
+//     return;
+//   }
+//
+//   mysqli_stmt_bind_param($stmt, "s", $userId);
+//   mysqli_stmt_execute($stmt);
+//   mysqli_stmt_close($stmt);
+//   // unset($_COOKIE['userId']);
+//   // unset($_COOKIE['sessionId']);
+//   setcookie("userId", "", time() - (86400 * 30));
+//   setcookie("sessionId", "", time() - (86400 * 30));
+// }
+
+
 function saveSession($conn, $userId, $sessionId){
  // echo "dsfsdf";
   $sql = "INSERT INTO session (userId, sessionId) VALUES (?, ?);";
@@ -340,6 +426,7 @@ function removeSession($conn,$userId){
   setcookie("userId", "", time() - (86400 * 30));
   setcookie("sessionId", "", time() - (86400 * 30));
 }
+
 
 
 
