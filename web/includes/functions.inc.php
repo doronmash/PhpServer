@@ -109,10 +109,10 @@ function getUserName($conn, $userId){
 }
 
 
-function saveCode($app, $email, $code){
-  $vars = "('$email', '$code')";
-  $sql = "INSERT INTO code (email, code) VALUES $vars;";
-  logToConsole("sql: ". $sql);
+function saveCode($conn, $email, $code){
+  // $vars = "('$email', '$code')";
+  // $sql = "INSERT INTO code (email, code) VALUES $vars;";
+  // logToConsole("sql: ". $sql);
   // $stmt = mysqli_stmt_init($conn);
   // $stmt = $conn->prepare($sql);
   // $stmt->bind_param("ss", $email, $code);
@@ -125,12 +125,12 @@ function saveCode($app, $email, $code){
   // $st->execute();
   // logToConsole("<- Execute");
 
-  $app->get('/db/', function() use($app) {
-    logToConsole("Prepare sql");
-    $st = $app['pdo']->prepare($sql);
-    logToConsole("-> Execute");
-    $st->execute();
-    logToConsole("<- Execute");
+  // $app->get('/db/', function() use($app) {
+  //   logToConsole("Prepare sql");
+  //   $st = $app['pdo']->prepare($sql);
+  //   logToConsole("-> Execute");
+  //   $st->execute();
+  //   logToConsole("<- Execute");
 
     // $names = array();
     // while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
@@ -141,7 +141,7 @@ function saveCode($app, $email, $code){
     // return $app['twig']->render('database.twig', array(
     //   'names' => $names
     // ));
-  });
+  // });
 
   // logToConsole("Prepare sql");
   // $stmt = $pdo->prepare($sql);
@@ -169,10 +169,11 @@ function saveCode($app, $email, $code){
   //   exit();
   // }
   //
-  // mysqli_stmt_bind_param($stmt, "ss", $email, $code);
-  // mysqli_stmt_execute($stmt);
-  // mysqli_stmt_close($stmt);
-  // exit();
+  $stmt = mysqli_stmt_init($conn);
+  mysqli_stmt_bind_param($stmt, "ss", $email, $code);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+  exit();
 }
 
 function createUser($conn, $name, $email, $username, $pwd){

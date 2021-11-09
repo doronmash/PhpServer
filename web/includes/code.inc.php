@@ -36,7 +36,7 @@ if (isset($_POST["sendCode"])) {
   }
   logToConsole("Check6");
 
-  saveCode($app, $email, "" . $randomNumber);
+  saveCode($conn, $email, "" . $randomNumber);
   logToConsole("Check7");
 
   $mail = new PHPMailer;
