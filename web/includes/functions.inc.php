@@ -361,6 +361,7 @@ function saveSession($conn, $userId, $sessionId){
 }
 
 function getSession($resultData){
+  logToConsole("enter to getSession");
     if ($row = mysqli_fetch_assoc($resultData)) {
     return $row;
   }
