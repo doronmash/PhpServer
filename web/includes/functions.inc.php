@@ -391,8 +391,9 @@ function checkSession($conn,$userId, $sessionId){
 
       return;
   }
+  logToConsole($row);
   $checkSessionId = password_verify($sessionId, $row["sessionId"]);
-
+  logToConsole($checkSessionId);
   if ($checkSessionId === false) {
     logToConsole("2");
       return;
