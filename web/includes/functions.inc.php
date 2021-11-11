@@ -391,31 +391,34 @@ function checkSession($conn,$userId, $sessionId){
 
       return;
   }
+  echo($row);
   logToConsole($row);
   $checkSessionId = password_verify($sessionId, $row["sessionId"]);
+  echo($checkSessionId);
+
   logToConsole($checkSessionId);
   if ($checkSessionId === false) {
     logToConsole("2");
       return;
     }
   else{
-    $user = getUserName($conn, $row['userId']);
-    logToConsole("finish getUserName");
-
-    $_SESSION['userid'] = $user['userId'];
-    $_SESSION['useruid'] = $user['userUid'];
-    // $_SESSION['userid'] = $user['usersId'];
-    // $_SESSION['useruid'] = $user['usersUid'];
-    logToConsole($_SESSION['userid']);
-    logToConsole($_SESSION['useruid']);
-    echo($_SESSION['userid']);
-    echo($_SESSION['useruid']);
-    logToConsole("1");
-
-    header("location: ../index.php");
-    // header("location: ../hello.php");
-    ob_end_flush();
-    exit();
+    // $user = getUserName($conn, $row['userId']);
+    // logToConsole("finish getUserName");
+    //
+    // $_SESSION['userid'] = $user['userId'];
+    // $_SESSION['useruid'] = $user['userUid'];
+    // // $_SESSION['userid'] = $user['usersId'];
+    // // $_SESSION['useruid'] = $user['usersUid'];
+    // logToConsole($_SESSION['userid']);
+    // logToConsole($_SESSION['useruid']);
+    // echo($_SESSION['userid']);
+    // echo($_SESSION['useruid']);
+    // logToConsole("1");
+    //
+    // header("location: ../index.php");
+    // // header("location: ../hello.php");
+    // ob_end_flush();
+    // exit();
   }
 
   mysqli_stmt_close($stmt);
