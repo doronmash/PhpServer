@@ -394,8 +394,7 @@ function checkSession($conn,$userId, $sessionId){
   $checkSessionId = password_verify($sessionId, $row["sessionId"]);
 
   if ($checkSessionId === false) {
-
-
+    logToConsole("2");
       return;
     }
   else{
@@ -408,6 +407,9 @@ function checkSession($conn,$userId, $sessionId){
     // $_SESSION['useruid'] = $user['usersUid'];
     logToConsole($_SESSION['userid']);
     logToConsole($_SESSION['useruid']);
+    echo($_SESSION['userid']);
+    echo($_SESSION['useruid']);
+    logToConsole("1");
 
     header("location: ../index.php");
     // header("location: ../hello.php");
