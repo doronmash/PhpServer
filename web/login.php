@@ -4,7 +4,9 @@
   require_once 'includes/functions.inc.php';
 
   if(isset($_COOKIE["userId"]) && isset($_COOKIE["sessionId"])){
-    // echo $_COOKIE["userId"] . " " . $_COOKIE["sessionId"];
+    loginUser("enter to if");
+
+    echo $_COOKIE["userId"] . " " . $_COOKIE["sessionId"];
 
     checkSession($conn,$_COOKIE["userId"], $_COOKIE["sessionId"]);
 
@@ -89,11 +91,7 @@ label{
     transform: translate(-50%,-50%);
     background: #191919;
     text-align: center;
-      /* margin: : 20px auto;
-      font-size: 100%;
-      text-align: center;
-      display: block;
-      position: absolute; */
+
   }
 .signup-form-form .box input[type = text]:focus, .signup-form-form .box input[type = password]:focus{
   width: 280px;

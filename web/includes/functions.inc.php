@@ -372,6 +372,7 @@ function getSession($resultData){
 
 
 function checkSession($conn,$userId, $sessionId){
+  loginUser("enter to checkSession");
   $sql = "SELECT * FROM session WHERE userId = ?;";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -383,6 +384,8 @@ function checkSession($conn,$userId, $sessionId){
 
   $resultData = mysqli_stmt_get_result($stmt);
   $row = getSession($resultData);
+  loginUser("finish getSession");
+
   if($row == false){
 
       return;
@@ -396,6 +399,8 @@ function checkSession($conn,$userId, $sessionId){
     }
   else{
     $user = getUserName($conn, $row['userId']);
+    loginUser("finish getUserName");
+
     $_SESSION['userid'] = $user['userId'];
     $_SESSION['useruid'] = $user['userUid'];
     // $_SESSION['userid'] = $user['usersId'];
