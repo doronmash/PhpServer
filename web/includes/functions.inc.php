@@ -406,6 +406,8 @@ function checkSession($conn,$userId, $sessionId){
     $_SESSION['useruid'] = $user['userUid'];
     // $_SESSION['userid'] = $user['usersId'];
     // $_SESSION['useruid'] = $user['usersUid'];
+    logToConsole($_SESSION['userid']);
+    logToConsole($_SESSION['useruid']);
 
     header("location: ../index.php");
     // header("location: ../hello.php");
